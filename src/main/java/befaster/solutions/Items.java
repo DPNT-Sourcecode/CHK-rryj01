@@ -50,16 +50,26 @@ public class Items {
             if (intCounterA > 0) {
                 if (intCounterA < 3) {
                     itemPrice = itemPrice + (intCounterA * getPriceA());
+
                 } else if ((intCounterA > 2) && (intCounterA < 5)){
                     int modulus = intCounterA % 3;
                     itemPrice = itemPrice + (modulus * getPriceA());
                     int j = intCounterA - modulus;
                     itemPrice = itemPrice + ((j / 3) * 130);
+
                 } else {
                     int modulus = intCounterA % 5;
-                    itemPrice = itemPrice + (modulus * getPriceA());
                     int j = intCounterA - modulus;
                     itemPrice = itemPrice + ((j / 5) * 200);
+
+                    if (modulus < 3) {
+                        itemPrice = itemPrice + (modulus * getPriceA());
+                    } else {
+                        int newModulus = modulus % 3;
+                        itemPrice = itemPrice + (newModulus * getPriceA());
+                        int k = modulus - newModulus;
+                        itemPrice = itemPrice + ((modulus / 3) * 130);
+                    }
 
                 }
             }
@@ -92,7 +102,7 @@ public class Items {
                     int k = (j / 2);
                     intCounterE = intCounterE - k;
 
-                    itemPrice = itemPrice + (intCounterE * getPriceB());
+                    itemPrice = itemPrice + (intCounterE * getPriceE());
 
                 }
             }
@@ -156,5 +166,6 @@ public class Items {
         this.priceE = priceE;
     }
 }
+
 
 
