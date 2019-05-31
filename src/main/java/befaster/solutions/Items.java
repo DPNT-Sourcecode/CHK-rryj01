@@ -42,7 +42,6 @@ public class Items {
         if ((intCounterA + intCounterB + intCounterC + intCounterD) < skus.length()) {
             return -1;
         } else {
-
             if (intCounterA > 0) {
                 if (intCounterA < 3) {
                     itemPrice = itemPrice + (intCounterA * getPriceA());
@@ -116,5 +115,6 @@ public class Items {
         return priceD;
     }
 }
+
 
 
