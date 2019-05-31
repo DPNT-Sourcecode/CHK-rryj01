@@ -14,11 +14,11 @@ public class Items {
     }
 
     public int getPrice(String skus) {
-        if (skus == "") {
-            return -1;
+        if (skus.equals("")) {
+            return 0;
         }
 
-        int itemPrice = -1;
+        int itemPrice = 0;
         int intCounterA = 0;
         int intCounterB = 0;
         int intCounterC = 0;
@@ -73,7 +73,11 @@ public class Items {
             itemPrice = itemPrice + (intCounterD * getPriceD());
         }
 
-        return itemPrice;
+        if(itemPrice == 0) {
+            return  -1;
+        } else {
+            return itemPrice;
+        }
 
 
     }
@@ -110,3 +114,4 @@ public class Items {
         return priceD;
     }
 }
+
