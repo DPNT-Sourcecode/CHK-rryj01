@@ -19,43 +19,58 @@ public class Items {
         }
 
         int itemPrice = -1;
-        int items = 0;
-        if (skus.equals(getItemA())) {
-            itemPrice = getPriceA();
-        } else if ((skus.length() == 2) && (skus.indexOf(getItemA()) > 0)) {
-            try {
-                items = Integer.parseInt(skus.substring(0, 1));
-                if (items < 3) {
-                    itemPrice = items * getPriceA();
-                } else {
-                    itemPrice = 130 + ((items % 3) * getPriceA());
-                }
-            } catch (Exception e) {
-                //do nothing
+        int intCounterA = 0;
+        int intCounterB = 0;
+        int intCounterC = 0;
+        int intCounterD = 0;
+
+        for (int i=0; i<skus.length(); i++) {
+            char item = skus.charAt(i);
+            if ((String.valueOf(item)).equals(getItemA())) {
+                intCounterA++;
+            }
+
+            if ((String.valueOf(item)).equals(getItemB())) {
+                intCounterB++;
+            }
+
+            if ((String.valueOf(item)).equals(getItemC())) {
+                intCounterC++;
+            }
+
+            if ((String.valueOf(item)).equals(getItemD())) {
+                intCounterD++;
             }
         }
 
-        if (skus.equals(getItemB())) {
-            itemPrice = getPriceB();
-        } else if ((skus.indexOf(getItemB()) > 0)) {
-            try {
-                items = Integer.parseInt(skus.substring(0, 1));
-                if (items < 3) {
-                    itemPrice = items * getPriceB();
-                } else {
-                    itemPrice = 45 + ((items % 3) * getPriceA());
-                }
-            } catch (Exception e) {
-                //do nothing
+        if (intCounterA > 0) {
+            if (intCounterA < 3) {
+                itemPrice = itemPrice + (intCounterA * getPriceA());
+            } else {
+                int modulus = intCounterA % 3;
+                itemPrice = itemPrice + (modulus * getPriceA());
+                int j = intCounterA - modulus;
+                itemPrice = itemPrice + ((j/3) * 130);
             }
         }
 
-        if (skus.equals(getItemC())) {
-            itemPrice = getPriceC();
+        if (intCounterB > 0) {
+            if (intCounterB < 2) {
+                itemPrice = itemPrice + (intCounterB * getPriceB());
+            } else {
+                int modulus = intCounterB % 2;
+                itemPrice = itemPrice + (modulus * getPriceB());
+                int j = intCounterB - modulus;
+                itemPrice = itemPrice + ((j/2) * 45);
+            }
         }
 
-        if (skus.equals(getItemD())) {
-            itemPrice = getPriceD();
+        if (intCounterC > 0) {
+            itemPrice = itemPrice + (intCounterC * getPriceC());
+        }
+
+        if (intCounterD > 0) {
+            itemPrice = itemPrice + (intCounterD * getPriceD());
         }
 
         return itemPrice;
@@ -95,5 +110,3 @@ public class Items {
         return priceD;
     }
 }
-
-
