@@ -20,7 +20,7 @@ public class Items {
 
         int itemPrice = -1;
         int items = 0;
-        if (skus == getItemA()) {
+        if (skus.equals(getItemA())) {
             itemPrice = getPriceA();
         } else if ((skus.length() == 2) && (skus.indexOf(getItemA()) > 0)) {
             try {
@@ -35,7 +35,7 @@ public class Items {
             }
         }
 
-        if (skus == getItemB()) {
+        if (skus.equals(getItemB())) {
             itemPrice = getPriceB();
         } else if ((skus.indexOf(getItemB()) > 0)) {
             try {
@@ -50,11 +50,11 @@ public class Items {
             }
         }
 
-        if (skus == getItemC()) {
+        if (skus.equals(getItemC())) {
             itemPrice = getPriceC();
         }
 
-        if (skus == getItemD()) {
+        if (skus.equals(getItemD())) {
             itemPrice =  getPriceD();
         }
 
@@ -95,3 +95,4 @@ public class Items {
         return priceD;
     }
 }
+
