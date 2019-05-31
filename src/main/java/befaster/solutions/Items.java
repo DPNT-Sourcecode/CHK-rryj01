@@ -44,7 +44,7 @@ public class Items {
             }
         }
 
-        if ((intCounterA + intCounterB + intCounterC + intCounterD) < skus.length()) {
+        if ((intCounterA + intCounterB + intCounterC + intCounterD + intCounterE) < skus.length()) {
             return -1;
         } else {
             if (intCounterA > 0) {
@@ -156,4 +156,5 @@ public class Items {
         this.priceE = priceE;
     }
 }
+
 
