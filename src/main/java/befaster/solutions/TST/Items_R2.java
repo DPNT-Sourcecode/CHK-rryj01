@@ -1,6 +1,6 @@
-package befaster.solutions;
+package befaster.solutions.TST;
 
-public class Items {
+public class Items_R2 {
     private String itemA = "A";
     private int priceA = 50;
     private String itemB = "B";
@@ -12,7 +12,7 @@ public class Items {
     private String itemE = "E";
     private int priceE = 40;
 
-    public Items() {
+    public Items_R2() {
     }
 
     public int getPrice(String skus) {
@@ -169,3 +169,4 @@ public class Items {
         this.priceE = priceE;
     }
 }
+
