@@ -18,23 +18,31 @@ public class Items {
         int items = 0;
         if (skus == getItemA()) {
             return getPriceA();
-        } else if ((skus.indexOf(getItemA()) > 0)) {
-            items = Integer.parseInt(skus.substring(0, 1));
-            if (items < 3) {
-                itemPrice = items * getPriceA();
-            } else {
-                itemPrice = 130 + ((items % 3) * getPriceA());
+        } else if ((skus.length() == 2) && (skus.indexOf(getItemA()) > 0)) {
+            try {
+                items = Integer.parseInt(skus.substring(0, 1));
+                if (items < 3) {
+                    itemPrice = items * getPriceA();
+                } else {
+                    itemPrice = 130 + ((items % 3) * getPriceA());
+                }
+            } catch (Exception e) {
+                //do nothing
             }
         }
 
         if (skus == getItemB()) {
             return getPriceB();
         } else if ((skus.indexOf(getItemB()) > 0)) {
-            items = Integer.parseInt(skus.substring(0, 1));
-            if (items < 3) {
-                itemPrice = items * getPriceB();
-            } else {
-                itemPrice = 45 + ((items % 3) * getPriceA());
+            try {
+                items = Integer.parseInt(skus.substring(0, 1));
+                if (items < 3) {
+                    itemPrice = items * getPriceB();
+                } else {
+                    itemPrice = 45 + ((items % 3) * getPriceA());
+                }
+            } catch (Exception e) {
+                //do nothing
             }
         }
 
@@ -83,5 +91,6 @@ public class Items {
         return priceD;
     }
 }
+
 
 
