@@ -85,12 +85,15 @@ public class Items {
 
             if (intCounterE > 0) {
                 if (intCounterE < 2) {
-                    itemPrice = itemPrice + (intCounterB * getPriceB());
+                    itemPrice = itemPrice + getPriceE();
                 } else {
-                    int modulus = intCounterB % 2;
-                    itemPrice = itemPrice + (modulus * getPriceB());
+                    int modulus = intCounterE % 2;
                     int j = intCounterB - modulus;
-                    itemPrice = itemPrice + ((j / 2) * 45);
+                    int k = (j / 2);
+                    intCounterE = intCounterE - k;
+
+                    itemPrice = itemPrice + (intCounterE * getPriceB());
+
                 }
             }
 
@@ -153,3 +156,4 @@ public class Items {
         this.priceE = priceE;
     }
 }
+
