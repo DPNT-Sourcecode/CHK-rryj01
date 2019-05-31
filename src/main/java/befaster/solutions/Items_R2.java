@@ -1,4 +1,4 @@
-package befaster.solutions.TST;
+package befaster.solutions;
 
 public class Items_R2 {
     private String itemA = "A";

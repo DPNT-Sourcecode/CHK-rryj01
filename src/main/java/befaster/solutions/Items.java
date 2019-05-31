@@ -120,10 +120,10 @@ public class Items {
                     itemPrice = itemPrice + getPriceF();
                 } else {
                     int modulus = intCounterF % 2;
-                    int j = intCounterF - modulus;
-                    int k = (j / 2);
-                    if (intCounterF > 2 && k > 1) {
-                        intCounterF = intCounterF - k;
+                    intCounterF = intCounterF - modulus;
+
+                    for (int k = 2; k < intCounterF ; k += 2) {
+                        intCounterF--;
                     }
                     itemPrice = itemPrice + (getPriceF() * intCounterF);
 
@@ -205,5 +205,3 @@ public class Items {
         this.priceF = priceF;
     }
 }
-
-
