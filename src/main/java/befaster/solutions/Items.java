@@ -14,19 +14,35 @@ public class Items {
     }
 
     public int getPrice(String skus) {
+        int items = 0;
         if (skus == getItemA()) {
             return getPriceA();
         } else if ((skus.indexOf(getItemA()) > 0)) {
-            int items = Integer.parseInt(skus.substring(0, 1))
-                    
+            items = Integer.parseInt(skus.substring(0, 1));
+            if (items < 3) {
+                return items * getPriceA();
+            } else {
+                return 130 + ((items % 3) * getPriceA());
+            }
+        }
 
-                    ;
-        } else if ((skus == getItemB()) || (skus.indexOf(getItemB()) > 0)) {
+        if (skus == getItemB()) {
+            return getPriceB();
+        } else if ((skus.indexOf(getItemB()) > 0)) {
+            items = Integer.parseInt(skus.substring(0, 1));
+            if (items < 3) {
+                return items * getPriceB();
+            } else {
+                return 45 + ((items % 3) * getPriceA());
+            }
+        }
 
-        } else if ((skus == getItemC()) || (skus.indexOf(getItemC()) > 0)) {
+        if (skus == getItemC()) {
+            return getPriceC();
+        }
 
-        } else if ((skus == getItemC()) || (skus.indexOf(getItemC()) > 0)) {
-
+        if (skus == getItemD()) {
+            return getPriceD();
         }
 
         return -1;
@@ -66,3 +82,4 @@ public class Items {
         return priceD;
     }
 }
+
