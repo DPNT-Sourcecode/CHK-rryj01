@@ -169,4 +169,3 @@ public class Items_R2 {
         this.priceE = priceE;
     }
 }
-
