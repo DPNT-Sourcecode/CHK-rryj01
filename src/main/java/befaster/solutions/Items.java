@@ -14,10 +14,14 @@ public class Items {
     }
 
     public int getPrice(String skus) {
+        if (skus == "") {
+            return -1;
+        }
+
         int itemPrice = -1;
         int items = 0;
         if (skus == getItemA()) {
-            return getPriceA();
+            itemPrice = getPriceA();
         } else if ((skus.length() == 2) && (skus.indexOf(getItemA()) > 0)) {
             try {
                 items = Integer.parseInt(skus.substring(0, 1));
@@ -32,7 +36,7 @@ public class Items {
         }
 
         if (skus == getItemB()) {
-            return getPriceB();
+            itemPrice = getPriceB();
         } else if ((skus.indexOf(getItemB()) > 0)) {
             try {
                 items = Integer.parseInt(skus.substring(0, 1));
@@ -91,6 +95,7 @@ public class Items {
         return priceD;
     }
 }
+
 
 
 
