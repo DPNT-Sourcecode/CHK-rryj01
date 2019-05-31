@@ -13,6 +13,27 @@ public class Items {
     public Items() {
     }
 
+    public int getPrice(String skus) {
+        if (skus == getItemA()) {
+            return getPriceA();
+        } else if ((skus.indexOf(getItemA()) > 0)) {
+            int items = Integer.parseInt(skus.substring(0, 1))
+                    
+
+                    ;
+        } else if ((skus == getItemB()) || (skus.indexOf(getItemB()) > 0)) {
+
+        } else if ((skus == getItemC()) || (skus.indexOf(getItemC()) > 0)) {
+
+        } else if ((skus == getItemC()) || (skus.indexOf(getItemC()) > 0)) {
+
+        }
+
+        return -1;
+
+
+    }
+
     public String getItemA() {
         return itemA;
     }
@@ -45,4 +66,3 @@ public class Items {
         return priceD;
     }
 }
-
