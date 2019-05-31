@@ -95,7 +95,3 @@ public class Items {
         return priceD;
     }
 }
-
-
-
-

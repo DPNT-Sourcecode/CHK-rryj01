@@ -9,4 +9,3 @@ public class CheckoutSolution {
         return items.getPrice(skus);
     }
 }
-
