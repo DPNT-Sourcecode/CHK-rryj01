@@ -14,6 +14,14 @@ public class CheckoutSolution {
         if (!(items.contains(skus))) {
             return -1;
         }
+
+        if ((skus.indexOf("A") == -1) && (skus.indexOf("B") == -1) &&
+                (skus.indexOf("C") == -1) && (skus.indexOf("A") == -1)) {
+            return -1;
+        }
+
+        if 
     }
 }
+
 
