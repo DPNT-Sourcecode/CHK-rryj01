@@ -55,7 +55,7 @@ public class Items {
         }
 
         if (skus.equals(getItemD())) {
-            itemPrice =  getPriceD();
+            itemPrice = getPriceD();
         }
 
         return itemPrice;
@@ -95,4 +95,5 @@ public class Items {
         return priceD;
     }
 }
+
 
