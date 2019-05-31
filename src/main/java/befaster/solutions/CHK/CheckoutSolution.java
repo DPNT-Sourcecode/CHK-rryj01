@@ -5,23 +5,18 @@ import java.util.List;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        List<String> items = new ArrayList<>();
-        items.add("A");
-        items.add("B");
-        items.add("C");
-        items.add("D");
 
-        if (!(items.contains(skus))) {
+        if ((skus != "A") && (skus != "B") && (skus != "C") &&) {
             return -1;
-        }
 
-        if ((skus.indexOf("A") == -1) && (skus.indexOf("B") == -1) &&
+        } else if ((skus.indexOf("A") == -1) && (skus.indexOf("B") == -1) &&
                 (skus.indexOf("C") == -1) && (skus.indexOf("A") == -1)) {
             return -1;
         }
 
-        if 
+        if ()
     }
 }
+
 
 
