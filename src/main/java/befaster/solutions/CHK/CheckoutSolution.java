@@ -1,9 +1,19 @@
 package befaster.solutions.CHK;
 
-import befaster.runner.SolutionNotImplementedException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        throw new SolutionNotImplementedException();
+        List<String> items = new ArrayList<>();
+        items.add("A");
+        items.add("B");
+        items.add("C");
+        items.add("D");
+
+        if (!(items.contains(skus))) {
+            return -1;
+        }
     }
 }
+
