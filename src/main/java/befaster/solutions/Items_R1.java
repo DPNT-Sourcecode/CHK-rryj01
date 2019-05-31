@@ -1,6 +1,6 @@
 package befaster.solutions;
 
-public class Items {
+public class Items_R1 {
     private String itemA = "A";
     private int priceA = 50;
     private String itemB = "B";
@@ -10,7 +10,7 @@ public class Items {
     private String itemD = "D";
     private int priceD = 15;
 
-    public Items() {
+    public Items_R1() {
     }
 
     public int getPrice(String skus) {
@@ -115,3 +115,4 @@ public class Items {
         return priceD;
     }
 }
+

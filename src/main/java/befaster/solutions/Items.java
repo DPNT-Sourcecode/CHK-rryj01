@@ -45,11 +45,17 @@ public class Items {
             if (intCounterA > 0) {
                 if (intCounterA < 3) {
                     itemPrice = itemPrice + (intCounterA * getPriceA());
-                } else {
+                } else if ((intCounterA > 2) && (intCounterA < 5)){
                     int modulus = intCounterA % 3;
                     itemPrice = itemPrice + (modulus * getPriceA());
                     int j = intCounterA - modulus;
                     itemPrice = itemPrice + ((j / 3) * 130);
+                } else {
+                    int modulus = intCounterA % 5;
+                    itemPrice = itemPrice + (modulus * getPriceA());
+                    int j = intCounterA - modulus;
+                    itemPrice = itemPrice + ((j / 5) * 200);
+
                 }
             }
 
@@ -115,6 +121,7 @@ public class Items {
         return priceD;
     }
 }
+
 
 
 
