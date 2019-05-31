@@ -42,6 +42,8 @@ public class Items {
                 intCounterD++;
             } else if ((String.valueOf(item)).equals(getItemE())) {
                 intCounterE++;
+            } else if ((String.valueOf(item)).equals(getItemF())) {
+                intCounterF++;
             } else {
                 break;
             }
@@ -201,4 +203,5 @@ public class Items {
         this.priceF = priceF;
     }
 }
+
 
