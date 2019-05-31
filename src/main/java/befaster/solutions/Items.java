@@ -28,49 +28,51 @@ public class Items {
             char item = skus.charAt(i);
             if ((String.valueOf(item)).equals(getItemA())) {
                 intCounterA++;
-            }
-
-            if ((String.valueOf(item)).equals(getItemB())) {
+            } else if ((String.valueOf(item)).equals(getItemB())) {
                 intCounterB++;
-            }
-
-            if ((String.valueOf(item)).equals(getItemC())) {
+            }  else if ((String.valueOf(item)).equals(getItemC())) {
                 intCounterC++;
-            }
-
-            if ((String.valueOf(item)).equals(getItemD())) {
+            } else if ((String.valueOf(item)).equals(getItemD())) {
                 intCounterD++;
-            }
-        }
-
-        if (intCounterA > 0) {
-            if (intCounterA < 3) {
-                itemPrice = itemPrice + (intCounterA * getPriceA());
             } else {
-                int modulus = intCounterA % 3;
-                itemPrice = itemPrice + (modulus * getPriceA());
-                int j = intCounterA - modulus;
-                itemPrice = itemPrice + ((j/3) * 130);
+                break;
             }
         }
 
-        if (intCounterB > 0) {
-            if (intCounterB < 2) {
-                itemPrice = itemPrice + (intCounterB * getPriceB());
-            } else {
-                int modulus = intCounterB % 2;
-                itemPrice = itemPrice + (modulus * getPriceB());
-                int j = intCounterB - modulus;
-                itemPrice = itemPrice + ((j/2) * 45);
+        if ((intCounterA + intCounterB + intCounterC + intCounterD) < skus.length()) {
+            return -1;
+        } else {
+
+            if (intCounterA > 0) {
+                if (intCounterA < 3) {
+                    itemPrice = itemPrice + (intCounterA * getPriceA());
+                } else {
+                    int modulus = intCounterA % 3;
+                    itemPrice = itemPrice + (modulus * getPriceA());
+                    int j = intCounterA - modulus;
+                    itemPrice = itemPrice + ((j / 3) * 130);
+                }
             }
-        }
 
-        if (intCounterC > 0) {
-            itemPrice = itemPrice + (intCounterC * getPriceC());
-        }
+            if (intCounterB > 0) {
+                if (intCounterB < 2) {
+                    itemPrice = itemPrice + (intCounterB * getPriceB());
+                } else {
+                    int modulus = intCounterB % 2;
+                    itemPrice = itemPrice + (modulus * getPriceB());
+                    int j = intCounterB - modulus;
+                    itemPrice = itemPrice + ((j / 2) * 45);
+                }
+            }
 
-        if (intCounterD > 0) {
-            itemPrice = itemPrice + (intCounterD * getPriceD());
+            if (intCounterC > 0) {
+                itemPrice = itemPrice + (intCounterC * getPriceC());
+            }
+
+            if (intCounterD > 0) {
+                itemPrice = itemPrice + (intCounterD * getPriceD());
+            }
+
         }
 
         if(itemPrice == 0) {
@@ -114,4 +116,5 @@ public class Items {
         return priceD;
     }
 }
+
 
