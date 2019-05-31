@@ -9,6 +9,8 @@ public class Items {
     private int priceC = 20;
     private String itemD = "D";
     private int priceD = 15;
+    private String itemE = "E";
+    private int priceE = 40;
 
     public Items() {
     }
@@ -23,6 +25,7 @@ public class Items {
         int intCounterB = 0;
         int intCounterC = 0;
         int intCounterD = 0;
+        int intCounterE = 0;
 
         for (int i=0; i<skus.length(); i++) {
             char item = skus.charAt(i);
@@ -34,6 +37,8 @@ public class Items {
                 intCounterC++;
             } else if ((String.valueOf(item)).equals(getItemD())) {
                 intCounterD++;
+            } else if ((String.valueOf(item)).equals(getItemE())) {
+                intCounterE++;
             } else {
                 break;
             }
@@ -78,6 +83,17 @@ public class Items {
                 itemPrice = itemPrice + (intCounterD * getPriceD());
             }
 
+            if (intCounterE > 0) {
+                if (intCounterE < 2) {
+                    itemPrice = itemPrice + (intCounterB * getPriceB());
+                } else {
+                    int modulus = intCounterB % 2;
+                    itemPrice = itemPrice + (modulus * getPriceB());
+                    int j = intCounterB - modulus;
+                    itemPrice = itemPrice + ((j / 2) * 45);
+                }
+            }
+
         }
 
         if(itemPrice == 0) {
@@ -120,8 +136,20 @@ public class Items {
     public int getPriceD() {
         return priceD;
     }
+
+    public String getItemE() {
+        return itemE;
+    }
+
+    public void setItemE(String itemE) {
+        this.itemE = itemE;
+    }
+
+    public int getPriceE() {
+        return priceE;
+    }
+
+    public void setPriceE(int priceE) {
+        this.priceE = priceE;
+    }
 }
-
-
-
-

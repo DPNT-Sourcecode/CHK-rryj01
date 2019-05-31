@@ -115,4 +115,3 @@ public class Items_R1 {
         return priceD;
     }
 }
-
