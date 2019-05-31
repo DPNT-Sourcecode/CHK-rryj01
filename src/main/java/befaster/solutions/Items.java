@@ -98,12 +98,11 @@ public class Items {
                     itemPrice = itemPrice + getPriceE();
                 } else {
                     int modulus = intCounterE % 2;
-                    int j = intCounterB - modulus;
+                    itemPrice = itemPrice + (modulus * getPriceE());
+                    int j = intCounterE - modulus;
                     int k = (j / 2);
-                    intCounterE = intCounterE - k;
-
-                    itemPrice = itemPrice + (intCounterE * getPriceE());
-
+                    itemPrice = itemPrice - (intCounterB * k);
+                    
                 }
             }
 
@@ -166,6 +165,7 @@ public class Items {
         this.priceE = priceE;
     }
 }
+
 
 
 
