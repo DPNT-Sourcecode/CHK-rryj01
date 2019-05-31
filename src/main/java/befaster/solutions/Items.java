@@ -47,6 +47,23 @@ public class Items {
         if ((intCounterA + intCounterB + intCounterC + intCounterD + intCounterE) < skus.length()) {
             return -1;
         } else {
+            if (intCounterE > 0) {
+                if (intCounterE < 2) {
+                    itemPrice = itemPrice + getPriceE();
+                } else {
+                    int modulus = intCounterE % 2;
+                    int j = intCounterE - modulus;
+                    int k = (j / 2);
+                    if (intCounterB > k) {
+                        intCounterB = intCounterB - k;
+                    } else {
+                        intCounterB = 0;
+                    }
+                    itemPrice = itemPrice + (getPriceE() * intCounterE);
+
+                }
+            }
+
             if (intCounterA > 0) {
                 if (intCounterA < 3) {
                     itemPrice = itemPrice + (intCounterA * getPriceA());
@@ -91,19 +108,6 @@ public class Items {
 
             if (intCounterD > 0) {
                 itemPrice = itemPrice + (intCounterD * getPriceD());
-            }
-
-            if (intCounterE > 0) {
-                if (intCounterE < 2) {
-                    itemPrice = itemPrice + getPriceE();
-                } else {
-                    int modulus = intCounterE % 2;
-                    itemPrice = itemPrice + (modulus * getPriceB());
-                    int j = intCounterE - modulus;
-                    int k = (j / 2);
-                    itemPrice = itemPrice + (intCounterE * k);
-
-                }
             }
 
         }
