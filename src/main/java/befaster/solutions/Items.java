@@ -358,7 +358,7 @@ public class Items {
         } else {
             int modulus = intCounter % firstOfferInt;
             intCounter = intCounter - modulus;
-            
+
             int staticIntCounter = intCounter;
             for (int k = firstOfferInt; k <= staticIntCounter ; k += firstOfferInt) {
                 intCounter--;
@@ -425,3 +425,4 @@ public class Items {
         return itemPriceOffer;
     }
 }
+
