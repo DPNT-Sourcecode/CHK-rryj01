@@ -469,7 +469,8 @@ public class Items {
                     itemPriceOffer += itemValueList.get(i);
                 }
 
-                itemPriceOffer = itemPriceOffer + (offerAmountValue);
+                int offerTotal = (intCounter - modulus) / offerIntValue;
+                itemPriceOffer = itemPriceOffer + (offerAmountValue * offerTotal);
 
             } else {
                 itemPriceOffer = (intCounter / offerIntValue) * offerAmountValue;
