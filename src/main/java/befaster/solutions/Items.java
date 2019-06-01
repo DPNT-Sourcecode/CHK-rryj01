@@ -353,7 +353,7 @@ public class Items {
     private int singleFreeOffer(int counterValue, int firstOfferInt, int itemsValue) {
         int itemPriceOffer = 0;
         int intCounter = counterValue;
-        if (intCounter < firstOfferInt) {
+        if (intCounter <= firstOfferInt) {
             itemPriceOffer = (intCounter * itemsValue);
         } else {
             int modulus = intCounter % firstOfferInt;
@@ -425,4 +425,3 @@ public class Items {
         return itemPriceOffer;
     }
 }
-
