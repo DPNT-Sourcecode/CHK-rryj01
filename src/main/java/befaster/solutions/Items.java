@@ -255,7 +255,7 @@ public class Items {
             }
 
             if (counters.get("K") > 0) {
-                itemPrice = itemPrice + singleOffer(counters.get("K"), items.get("K"), 2, 150);
+                itemPrice = itemPrice + singleOffer(counters.get("K"), items.get("K"), 2, 120);
             }
 
             if (counters.get("L") > 0) {
@@ -431,3 +431,4 @@ public class Items {
         return itemPriceOffer;
     }
 }
+
