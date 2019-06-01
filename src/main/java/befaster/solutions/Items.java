@@ -361,7 +361,13 @@ public class Items {
 
             int staticIntCounter = intCounter;
             for (int k = firstOfferInt; k <= staticIntCounter ; k += firstOfferInt) {
-                intCounter--;
+                if(modulus == 0) {
+                    if (k < staticIntCounter) {
+                        intCounter--;
+                    }
+                } else {
+                    intCounter--;
+                }
             }
             itemPriceOffer = (itemsValue * (intCounter + modulus));
 
