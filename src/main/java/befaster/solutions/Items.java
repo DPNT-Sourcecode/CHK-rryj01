@@ -134,7 +134,7 @@ public class Items {
                 counters.put("L", value);
 
             } else if ((String.valueOf(item)).equals("M")) {
-                int value = counters.get("");
+                int value = counters.get("M");
                 value++;
                 counters.put("M", value);
 
@@ -424,3 +424,4 @@ public class Items {
         return itemPriceOffer;
     }
 }
+
