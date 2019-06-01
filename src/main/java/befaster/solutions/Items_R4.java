@@ -1,11 +1,12 @@
 package befaster.solutions;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Items {
+public class Items_R4 {
     Map<String, Integer> items = new HashMap<String, Integer>();
     Map<String, Integer> counters = new HashMap<String, Integer>();
-    public Items() {
+    public Items_R4() {
         items.put("A", 50);
         items.put("B", 30);
         items.put("C", 20);
@@ -16,7 +17,7 @@ public class Items {
         items.put("H", 10);
         items.put("I", 35);
         items.put("J", 60);
-        items.put("K", 70);
+        items.put("K", 80);
         items.put("L", 90);
         items.put("M", 15);
         items.put("N", 40);
@@ -24,14 +25,14 @@ public class Items {
         items.put("P", 50);
         items.put("Q", 30);
         items.put("R", 50);
-        items.put("S", 20);
+        items.put("S", 30);
         items.put("T", 20);
         items.put("U", 40);
         items.put("V", 50);
         items.put("W", 20);
-        items.put("X", 17);
-        items.put("Y", 20);
-        items.put("Z", 21);
+        items.put("X", 90);
+        items.put("Y", 10);
+        items.put("Z", 50);
 
         counters.put("A", 0);
         counters.put("B", 0);
@@ -254,7 +255,7 @@ public class Items {
             }
 
             if (counters.get("K") > 0) {
-                itemPrice = itemPrice + singleOffer(counters.get("K"), items.get("K"), 2, 120);
+                itemPrice = itemPrice + singleOffer(counters.get("K"), items.get("K"), 2, 150);
             }
 
             if (counters.get("L") > 0) {
@@ -285,6 +286,14 @@ public class Items {
                 itemPrice = itemPrice + singleOffer(counters.get("Q"), items.get("Q"), 3, 80);
             }
 
+            if (counters.get("S") > 0) {
+                itemPrice = itemPrice + singleItem(counters.get("S"), items.get("S"));
+            }
+
+            if (counters.get("T") > 0) {
+                itemPrice = itemPrice + singleItem(counters.get("T") , items.get("T"));
+            }
+
             if (counters.get("U") > 0) {
                 itemPrice = itemPrice + singleFreeOffer(counters.get("U"), 3, items.get("U"));
             }
@@ -298,48 +307,18 @@ public class Items {
                 itemPrice = itemPrice + singleItem(counters.get("W") , items.get("W"));
             }
 
-            if ((counters.get("S") + counters.get("T") + counters.get("X") + counters.get("Y") + counters.get("Z")) >= 3) {
-                List<Integer> itemsList = new ArrayList<Integer>();
-                itemsList.add(items.get("S"));
-                itemsList.add(items.get("T"));
-                itemsList.add(items.get("X"));
-                itemsList.add(items.get("Y"));
-                itemsList.add(items.get("Z"));
-
-                List<Integer> counterList = new ArrayList<Integer>();
-                counterList.add(counters.get("S"));
-                counterList.add(counters.get("T"));
-                counterList.add(counters.get("X"));
-                counterList.add(counters.get("Y"));
-                counterList.add(counters.get("Z"));
-
-                int counterValue = counterList.stream().mapToInt(Integer::intValue).sum();
-
-                itemPrice = itemPrice + combinationOffer(counterValue, itemsList, 3,45);
-
-            } else {
-
-                if (counters.get("S") > 0) {
-                    itemPrice = itemPrice + singleItem(counters.get("S"), items.get("S"));
-                }
-
-                if (counters.get("T") > 0) {
-                    itemPrice = itemPrice + singleItem(counters.get("T"), items.get("T"));
-                }
-
-
-                if (counters.get("X") > 0) {
-                    itemPrice = itemPrice + singleItem(counters.get("X"), items.get("X"));
-                }
-
-                if (counters.get("Y") > 0) {
-                    itemPrice = itemPrice + singleItem(counters.get("Y"), items.get("Y"));
-                }
-
-                if (counters.get("Z") > 0) {
-                    itemPrice = itemPrice + singleItem(counters.get("Z"), items.get("Z"));
-                }
+            if (counters.get("X") > 0) {
+                itemPrice = itemPrice + singleItem(counters.get("X") , items.get("X"));
             }
+
+            if (counters.get("Y") > 0) {
+                itemPrice = itemPrice + singleItem(counters.get("Y") , items.get("Y"));
+            }
+
+            if (counters.get("Z") > 0) {
+                itemPrice = itemPrice + singleItem(counters.get("Z"), items.get("Z"));
+            }
+
         }
 
         if(itemPrice == 0) {
@@ -450,33 +429,5 @@ public class Items {
         }
 
         return itemPriceOffer;
-    }
-
-    private int combinationOffer(int totalCounterValue, List<Integer> itemValueList, int offerIntValue,
-                                 int offerAmountValue) {
-        int itemPriceOffer = 0;
-        int intCounter = totalCounterValue;
-        if (intCounter == offerIntValue) {
-            itemPriceOffer = offerAmountValue;
-        } else {
-            itemValueList.sort((v1, v2) -> v1
-                    .compareTo(v2));
-
-            int modulus = intCounter % offerIntValue;
-            if (modulus > 0) {
-
-                for (int i = 0; i < modulus; i++) {
-                    itemPriceOffer += itemValueList.get(i);
-                }
-
-                itemPriceOffer = itemPriceOffer + (offerAmountValue);
-
-            } else {
-                itemPriceOffer = (intCounter / offerIntValue) * offerAmountValue;
-            }
-        }
-
-        return itemPriceOffer;
-
     }
 }
