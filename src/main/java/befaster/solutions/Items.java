@@ -300,11 +300,11 @@ public class Items {
 
             if ((counters.get("S") + counters.get("T") + counters.get("X") + counters.get("Y") + counters.get("Z")) >= 3) {
                 List<Integer> itemsList = new ArrayList<Integer>();
-                itemsList.add(items.get("S"));
-                itemsList.add(items.get("T"));
-                itemsList.add(items.get("X"));
-                itemsList.add(items.get("Y"));
-                itemsList.add(items.get("Z"));
+                if (counters.get("S") > 0) { itemsList.add(items.get("S")); }
+                if (counters.get("T") > 0) { itemsList.add(items.get("T")); }
+                if (counters.get("X") > 0) { itemsList.add(items.get("X")); }
+                if (counters.get("Y") > 0) { itemsList.add(items.get("Y")); }
+                if (counters.get("Z") > 0) { itemsList.add(items.get("Z")); }
 
                 List<Integer> counterList = new ArrayList<Integer>();
                 counterList.add(counters.get("S"));
