@@ -358,11 +358,12 @@ public class Items {
         } else {
             int modulus = intCounter % firstOfferInt;
             intCounter = intCounter - modulus;
-
-            for (int k = firstOfferInt; k < intCounter ; k += firstOfferInt) {
+            
+            int staticIntCounter = intCounter;
+            for (int k = firstOfferInt; k <= staticIntCounter ; k += firstOfferInt) {
                 intCounter--;
             }
-            itemPriceOffer = (itemsValue * intCounter);
+            itemPriceOffer = (itemsValue * (intCounter + modulus));
 
         }
 
@@ -424,5 +425,3 @@ public class Items {
         return itemPriceOffer;
     }
 }
-
-
