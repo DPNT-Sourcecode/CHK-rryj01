@@ -4,7 +4,7 @@ public class Test {
 
     public static void main(String[] args) {
         Items items = new Items();
-        System.out.println(items.getPrice("FFFFFF"));
+        System.out.println(items.getPrice("HHHHHH"));
 
     }
 }
